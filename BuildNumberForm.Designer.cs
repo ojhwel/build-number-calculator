@@ -44,7 +44,7 @@
             // 
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "notifyIcon1";
+            this.notifyIcon.Text = "Build Number Calculator";
             this.notifyIcon.Visible = true;
             this.notifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
             // 
@@ -97,9 +97,9 @@
             this.yesterdayCheckBox.AutoSize = true;
             this.yesterdayCheckBox.Location = new System.Drawing.Point(37, 87);
             this.yesterdayCheckBox.Name = "yesterdayCheckBox";
-            this.yesterdayCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.yesterdayCheckBox.Size = new System.Drawing.Size(103, 17);
             this.yesterdayCheckBox.TabIndex = 3;
-            this.yesterdayCheckBox.Text = "For y&esterday";
+            this.yesterdayCheckBox.Text = "&From yesterday";
             this.yesterdayCheckBox.UseVisualStyleBackColor = true;
             this.yesterdayCheckBox.CheckedChanged += new System.EventHandler(this.YesterdayCheckBox_CheckedChanged);
             // 
