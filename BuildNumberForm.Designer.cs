@@ -115,10 +115,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuildNumberForm";
+            this.ShowInTaskbar = false;
             this.Text = "Build Number Calculator";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BuildNumberForm_FormClosing);
             this.Load += new System.EventHandler(this.BuildNumberForm_Load);
+            this.Shown += new System.EventHandler(this.BuildNumberForm_Shown);
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

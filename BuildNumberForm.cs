@@ -56,7 +56,6 @@ namespace BuildNumberCalculator
             notifyIcon.Visible = true;
             Left = Screen.PrimaryScreen.WorkingArea.Width - this.Width - 10;
             Top = Screen.PrimaryScreen.WorkingArea.Height - this.Height - 10;
-            WindowState = FormWindowState.Minimized;
         }
 
         /// <summary>
@@ -64,7 +63,7 @@ namespace BuildNumberCalculator
         /// </summary>
         private void NotifyIcon_DoubleClick(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
+            if (!Visible)
                 ShowWindow();
             else
                 Calculate();
@@ -101,7 +100,7 @@ namespace BuildNumberCalculator
         /// </summary>
         private void ShowWindow()
         {
-            WindowState = FormWindowState.Normal;
+            Show();
             Calculate();
         }
 
@@ -119,6 +118,19 @@ namespace BuildNumberCalculator
         private void BuildNumberLabel_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(buildNumberLabel.Text);
+        }
+
+        /// <summary>
+        /// Hide the form immediately on first display. To avoid it flashing in the taskbar, ShowInTaskbar is initially off. It then also serves as an 
+        /// indication whether this is the first display, i.e. on subsequent Show events, ShowInTaskbar is true and nothing has to happen.
+        /// </summary>
+        private void BuildNumberForm_Shown(object sender, EventArgs e)
+        {
+            if (!ShowInTaskbar)
+            {
+                Hide();
+                ShowInTaskbar = true;
+            }
         }
     }
 }
